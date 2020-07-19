@@ -1,8 +1,8 @@
-# Deploy Function App for getting Office 365 Management API data into Azure Sentinel
+# Deploy Function App for getting Oracle Cloud Audit Events data into Azure Sentinel
 This function app will poll Oracle Cloud Audit Events API every 5 mins for logs.  It is designed to get AuditEvents.
 
 ## Deployment and Configuration
-### Add Oracle Confidential App and Find IDCS Uri
+### Add Oracle Confidential App, Generate Base 64 ClientID:ClientSecret string, and Find IDCS Uri
 1. Review: https://docs.oracle.com/en/cloud/paas/identity-cloud/17.3.6/rest-api/OATOAuthClientWebApp.html
 
 #### : Deploy via Azure ARM Template
@@ -28,11 +28,11 @@ This function app will poll Oracle Cloud Audit Events API every 5 mins for logs.
 4. Click Configuration under General.
 5. click edit next to b64clientidsecret.
 6. Update the value using your copied properties.
-* @Microsoft.KeyVault(SecretUri=https://<dnsname>/secrets/OCI_b64clientidsecret/<versionstring>)
+* @Microsoft.KeyVault(SecretUri=https://<dnsname>/secrets/b64clientidsecret/<versionstring>)
 7. Click Ok.
 8. click edit next to workspaceKey.
 9. Update the value using your copied properties
-* @Microsoft.KeyVault(SecretUri=https://<dnsname>/secrets/OCIworkspacekey/<versionstring>)
+* @Microsoft.KeyVault(SecretUri=https://<dnsname>/secrets/workspaceKey/<versionstring>)
 10. Click Ok.
 11.  Update each setting
 * ICDS = idcs-YOURCLOUDINSTANCE.identity.oraclecloud.com
