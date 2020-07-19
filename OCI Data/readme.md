@@ -18,6 +18,9 @@ This function app will poll Oracle Cloud Audit Events API every 5 mins for logs.
     <img src="https://aka.ms/deploytoazurebutton""/>
 </a>
 
+### Assign MSI OCI Data Function
+1. Go to Azure Sentinel Workspace and IAM Blade and add OCI Data Function as a Reader Role
+
 ### Confiugure Settings for the Function
 1. Go to the Azure Portal.
 2. Go to the resource group that was created.  Click the Function.
